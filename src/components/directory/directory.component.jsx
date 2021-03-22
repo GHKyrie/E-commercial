@@ -11,28 +11,28 @@ class Directory extends React.Component {
                 [
                     {
                         title: 'SSD',
-                        imageUrl: 'https://svgshare.com/i/VHa.svg',
+                        imageUrl: 'https://i.ibb.co/z4Tg37B/ssd.jpg',
                         id: 1
                     },
                     {
                         title: 'ПРОЦЕССОРЫ',
-                        imageUrl: 'https://svgshare.com/i/VJj.svg',
+                        imageUrl: 'https://i.ibb.co/JsCngWy/CPU.jpg',
                         id: 2
                     },
                     {
                         title: 'МАТЕРИНСКИЕ ПЛАТЫ',
-                        imageUrl: 'https://svgshare.com/i/VGo.svg',
+                        imageUrl: 'https://i.ibb.co/zZdx8n5/mat.jpg',
                         id: 3
                     },
                     {
                         title: 'КОМПЛЕКТУЮЩИЕ',
-                        imageUrl: 'https://svgshare.com/i/VHo.svg',
+                        imageUrl: 'https://i.ibb.co/zQhcY5W/parts.jpg',
                         size: 'large',
                         id: 4
                     },
                     {
                         title: 'СБОРКИ',
-                        imageUrl: 'https://svgshare.com/i/VJk.svg',
+                        imageUrl: 'https://i.ibb.co/vwpttRJ/sborka.jpg',
                         size: 'large',
                         id: 5
                     }

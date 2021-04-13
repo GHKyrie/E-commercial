@@ -2,7 +2,7 @@ import './sign-in.styles.scss';
 import {Component} from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
-import { signInWithGoogle } from "../firebase/firebase.utils";
+import {signInWithGoogle} from "../../firebase/firebase.utils";
 
 class SignIn extends Component {
     constructor(props) {
@@ -17,13 +17,13 @@ class SignIn extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        this.state({ email: '', password: '' });
+        this.state({email: '', password: ''});
     }
 
     handleChange = event => {
-        const { value, name } = event.target;
+        const {value, name} = event.target;
 
-        this.setState({ [name]: value });
+        this.setState({[name]: value});
     }
 
     render() {
@@ -32,28 +32,30 @@ class SignIn extends Component {
                 <h2>У меня уже есть аккаунт</h2>
                 <span>Войти, используя свою почту и пароль</span>
 
-                <form onSubmit={ this.handleSubmit } >
+                <form onSubmit={this.handleSubmit}>
                     <FormInput
                         name='email'
                         type='email'
                         value={this.state.email}
                         label='Почта'
                         handleChange={this.handleChange}
-                        required />
+                        required/>
                     <FormInput
                         name='password'
                         type='password'
                         value={this.state.password}
                         label='Пароль'
                         handleChange={this.handleChange}
-                        required />
+                        required/>
+                    <div className="buttons">
+                        <CustomButton type="submit"> Войти </CustomButton>
+                        <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+                            {' '}
+                            Google
+                            {' '}
+                        </CustomButton>
+                    </div>
 
-                    <CustomButton type="submit"> Войти </CustomButton>
-                    <CustomButton onClick={signInWithGoogle}>
-                        {' '}
-                        Google
-                        {' '}
-                    </CustomButton>
                 </form>
             </div>
         )

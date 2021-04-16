@@ -31,7 +31,7 @@ class SignUp extends React.Component {
         try {
             const { user } = await auth.createUserWithEmailAndPassword(email, password);
 
-            await createUserProfileDocument(user, displayName);
+            await createUserProfileDocument(user, { displayName });
 
             this.setState({
                 displayName: '',
@@ -49,6 +49,8 @@ class SignUp extends React.Component {
         const { name, value } = event.target;
 
         this.setState({ [name]: value });
+
+
     }
 
     render() {
@@ -63,7 +65,7 @@ class SignUp extends React.Component {
                         name='displayName'
                         value={displayName}
                         onChange={this.handleChange}
-                        label='Display Name'
+                        label='Никнейм'
                         required
                     />
                     <FormInput
@@ -71,7 +73,7 @@ class SignUp extends React.Component {
                         name='email'
                         value={email}
                         onChange={this.handleChange}
-                        label='Email'
+                        label='Почта'
                         required
                     />
                     <FormInput
@@ -79,15 +81,15 @@ class SignUp extends React.Component {
                         name='password'
                         value={password}
                         onChange={this.handleChange}
-                        label='Password'
+                        label='Пароль'
                         required
                     />
                     <FormInput
                         type='password'
-                        name='confirmpassword'
+                        name='confirmPassword'
                         value={confirmPassword}
                         onChange={this.handleChange}
-                        label='Confirm password'
+                        label='Подтвердите пароль'
                         required
                     />
                     <CustomButton type='submit'>Зарегистрироваться</CustomButton>
